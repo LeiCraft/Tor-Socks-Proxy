@@ -10,7 +10,7 @@ RUN echo '@edge https://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/ap
     rm -rf /var/cache/apk/* && \
     tor --version
 
-RUN chown -R tor:root /etc/tor/
+COPY --chown=tor:root torrc /etc/tor/
 
 USER tor
 
