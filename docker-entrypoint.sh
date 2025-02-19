@@ -12,6 +12,10 @@ DNSPort [::]:8853
 SocksPort 0.0.0.0:9150
 SocksPort [::]:9150
 
+Socks5ProxyUsername admin
+Socks5ProxyPassword password
+
 TOR_CONF
 
-/usr/bin/tor -f /etc/tor/torrc
+exec /usr/bin/tor -f /etc/tor/torrc
+
