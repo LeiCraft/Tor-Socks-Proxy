@@ -3,6 +3,7 @@ services:
     image: ghcr.io/leicraft/tor-socks-proxy
     ports:
       - "0.0.0.0:9150:9150/tcp"
+      - "[::]:9150:9150/tcp"
     restart: unless-stopped
 
 networks:
