@@ -1,0 +1,10 @@
+services:
+  socks-proxy:
+    image: ghcr.io/leicraft/tor-socks-proxy
+    ports:
+      - "0.0.0.0:9150:9150/tcp"
+    restart: unless-stopped
+
+networks:
+  default:
+    driver: bridge
