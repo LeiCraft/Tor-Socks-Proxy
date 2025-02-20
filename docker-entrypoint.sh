@@ -9,10 +9,11 @@ HOME_DIR="/home/container"
 TMP_DIR="$HOME_DIR/tmp"
 SOCKS5_RELAY_BIN="$HOME_DIR/socks5-relay"
 
-RUN curl -L -o $TMP_DIR/socks5balancer.zip $DOWNLOAD_URL && \
+mkdir -p $TMP_DIR && \
+curl -L -o $TMP_DIR/socks5balancer.zip $DOWNLOAD_URL && \
     unzip $TMP_DIR/socks5balancer.zip -d $TMP_DIR/socks5-relay && \
-    mv $TMP_DIR/socks5-relay/Socks5BalancerAsio $SOCKS5_RELAY_BIN && \
-    chmod 755 $SOCKS5_RELAY_BIN && \
+    mv $TMP_DIR/socks5-relay/Socks5BalancerAsio "$SOCKS5_RELAY_BIN" && \
+    chmod 755 "$SOCKS5_RELAY_BIN" && \
     rm -rf $TMP_DIR/socks5balancer.zip $TMP_DIR/socks5-relay
 
 cat << SOCKS5_CONF > "/home/container/socks-relay-config.json"
