@@ -28,4 +28,4 @@ HEALTHCHECK --timeout=10s --start-period=60s \
 
 EXPOSE 8853/udp 9150/tcp
 
-CMD ["/bin/sh", "/docker-entrypoint.sh"]
+CMD ["/bin/bash", "/docker-entrypoint.sh"]
