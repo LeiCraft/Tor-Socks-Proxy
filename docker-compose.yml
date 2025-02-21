@@ -1,7 +1,7 @@
 services:
   socks-proxy:
     container_name: tor-socks-proxy
-    image: ghcr.io/leicraft/tor-socks-proxy
+    image: ghcr.io/leicraft/tor-socks-proxy:latest
     ports:
       - "0.0.0.0:9150:9150/tcp"
       - "[::]:9150:9150/tcp"
