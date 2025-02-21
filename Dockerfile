@@ -18,8 +18,6 @@ RUN adduser --disabled-password --home /home/container container && \
     rm -rf /var/lib/apt/lists/* && \
     tor --version
 
-COPY --chown=container torrc /home/container/
-
 USER container
 
 COPY ./docker-entrypoint.sh /docker-entrypoint.sh
