@@ -6,7 +6,7 @@ services:
       - "0.0.0.0:9150:9150/tcp"
       - "[::]:9150:9150/tcp"
     environment:
-      - AUTH=false
+      AUTH: false
     restart: unless-stopped
 
 networks:
