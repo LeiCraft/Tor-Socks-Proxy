@@ -36,6 +36,16 @@ cat << SOCKS5_CONF > "/home/container/socks-relay-config.json"
       "host": "127.0.0.1",
       "port": 9151
     }
+  ],
+  "AuthClientInfo": [
+    {
+      "user": "system",
+      "pwd": "123456"
+    },
+    {
+      "user": "admin",
+      "pwd": "123456"
+    }
   ]
 }
 SOCKS5_CONF
