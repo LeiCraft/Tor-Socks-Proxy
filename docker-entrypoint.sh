@@ -39,6 +39,10 @@ cat << SOCKS5_CONF > "/home/container/socks-relay-config.json"
   ],
   "AuthClientInfo": [
     {
+      "user": "system",
+      "pwd": "123456"
+    },
+    {
       "user": "admin",
       "pwd": "123456"
     }
