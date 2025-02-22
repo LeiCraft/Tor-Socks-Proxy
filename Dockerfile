@@ -18,10 +18,12 @@ RUN adduser --disabled-password --home /home/container container && \
     rm -rf /var/lib/apt/lists/* && \
     tor --version
 
-USER container
+COPY --chown=container ./docker-entrypoint.sh /docker-entrypoint.sh
+COPY --chown=container ./docker-healthcheck.sh /docker-healthcheck.sh
 
-COPY ./docker-entrypoint.sh /docker-entrypoint.sh
-COPY ./docker-healthcheck.sh /docker-healthcheck.sh
+RUN chmod +x /docker-entrypoint.sh /docker-healthcheck.sh
+
+USER container
 
 HEALTHCHECK --timeout=10s --start-period=60s \
     CMD /docker-healthcheck.sh || exit 1
